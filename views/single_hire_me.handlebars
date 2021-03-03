@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{twitter_site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="{{twitter_site}}">
+    <meta name="twitter:image" content="{{image}}">
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="article:published_time" content="{{date}}" />
+    <meta property="article:modified_time" content="{{date}}" />
+    <meta property="fb:app_id" content="{{fb_app_id}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    {{#each alternate_list}}
+        <link rel="alternate" href="{{url}}" hreflang="{{lang}}" />
+    {{/each}}
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-lang="{{lang}}" data-check="{{is_loginned}}" data-css-version="{{css_version}}" data-js-version="{{js_version}}">
+<div class="body-inner">
+    <div id="mobile-menu">
+        <a href='/'><div class="menu-desktop-item home"><img src='{{aws_s3_url}}/icons/logo.png{{css_version}}'></div></a><a class="menu-desktop-main-title" href="/hire-me"><div class="menu-desktop-item home-title">{{#with i18n}}{{hire_me}}{{/with}}</div></a>
+        <img id="menu-btn-mobile" src="{{aws_s3_url}}/icons/menu.png{{css_version}}">
+    </div>
+    <div id="mobile-right-menu">
+        <div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div>
+        <!--<div class="select-lang-item"><select class="select-lang">{{#with i18n}}{{{select_lang}}}{{/with}}</select></div>-->
+        {{#if is_loginned}}
+            <div class="user-item">
+                <div class="user-profile">
+                    {{#with user}}
+                        <div class="user-profile-left"><img src="{{img}}"></div>
+                        <div class="user-profile-right"><div><span class="user-name">{{name}}</span></div><div class="blog-id">@{{blog_id}}</div></div>
+                    {{/with}}
+                </div>
+                <div class="user-profile-info"><div id="menu-messages-mobile" class="user-profile-info-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/messages-selected.png{{css_version}}'><div class='new' style="display:none;"></div><div class="user-profile-info-title">{{#with i18n}}{{messages}}{{/with}}</div></div><div id="menu-notifications-mobile" class="user-profile-info-item user-profile-info-right-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/notifications-selected.png{{css_version}}'><div class='new' style="display:none;"></div><div class="user-profile-info-title">{{#with i18n}}{{notifications}}{{/with}}</div></div><a href='{{profile_url}}'><div class="user-profile-info-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/blog-logo-black.png{{css_version}}'><div class="user-profile-info-title">{{#with i18n}}{{blog}}{{/with}}</div></div></a><div id='menu-logout-mobile' class="user-profile-info-item user-profile-info-right-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/logout.png{{css_version}}'><div class="user-profile-info-title">{{#with i18n}}{{logout}}{{/with}}</div></div></div>
+            </div>
+        {{else}}
+            <div class="login-item">
+                {{#with i18n}}
+                    <div class="login-item-description">{{please_login}}</div>
+                    <a href="/login"><div class="login-item-box"><img src="{{aws_s3_url}}/icons/logo.png{{css_version}}" alt="Gleant" title="Gleant"><span>{{login}}</span></div></a>
+                    <div class="login-item-bottom">
+                        <div class="forgot-password"><a href="/forgot-password"><span>{{forgot_password}}</span></a></div>
+                        <div class="register"><a href="/register"><span>{{register}}</span></a></div>
+                    </div>
+                {{/with}}
+            </div>
+        {{/if}}
+        <div class="services">{{#with i18n}}<div class="service-title"><span>{{total_service}}</span></div><a href="/news"><div class="service-item"><img src="{{aws_s3_url}}/icons/news-logo2.png{{css_version}}"><div>{{news}}</div></div></a><a href="/debate"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/debate_logo.png{{css_version}}"><div>{{debate}}</div></div></a><a href="/blog"><div class="service-item"><img src="{{aws_s3_url}}/icons/blog-logo.png{{css_version}}"><div>{{blog}}</div></div></a><a href="/"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/search-logo.png{{css_version}}"><div>{{search}}</div></div></a>{{/with}}</div>
+    </div>
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;">
+        <div class="body-inner-main" style="text-align:center;">
+            <div id="menu">
+                <div id="menu-inner" style="max-width:1150px;">
+                    <div id="service-list"><!--
+                            --><div class="services">{{#with i18n}}<div class="service-title"><span>{{total_service}}</span></div><a href="/news"><div class="service-item"><img src="{{aws_s3_url}}/icons/news-logo2.png{{css_version}}"><div>{{news}}</div></div></a><a href="/debate"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/debate_logo.png{{css_version}}"><div>{{debate}}</div></div></a><a href="/blog"><div class="service-item"><img src="{{aws_s3_url}}/icons/blog-logo.png{{css_version}}"><div>{{blog}}</div></div></a><a href="/"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/search-logo.png{{css_version}}"><div>{{search}}</div></div></a>{{/with}}</div><!--
+                        --></div>
+                    <a id="menu-desktop-home" href='/'><div class="menu-desktop-item home"><img src='{{aws_s3_url}}/icons/logo.png{{css_version}}'></div></a><a class="menu-desktop-main-title" href="/hire-me"><div class="menu-desktop-item home-title">{{#with i18n}}{{hire_me}}{{/with}}</div></a>
+                    {{#if is_loginned}}
+                        <div id='menu-user-desktop' class='menu-item menu-desktop-item' style="position:relative;">{{#with user}}<img class='emoticon-big-circle-img' src='{{img}}'><span>{{name}}</span>{{/with}}<!--
+                            --><div id="desktop-user-menu"><!--
+                                --><ul><!--
+                                    --><a href='{{profile_url}}'><li id='menu-profile-desktop' class='menu-item'><img class='emoticon-big-square-img' src="{{aws_s3_url}}/icons/blog-logo-black.png{{css_version}}"><span>{{#with i18n}}{{blog}}{{/with}}</span></li></a><!--
+                                    --><li id='menu-logout-desktop' class='menu-item'><img class='emoticon-big-square-img' src="{{aws_s3_url}}/icons/logout.png{{css_version}}"><span>{{#with i18n}}{{logout}}{{/with}}</span></li><!--
+                                --></ul><!--
+                            --></div><!--
+                        --></div>
+                        <div id='menu-notifications-desktop' class='menu-item menu-desktop-item'><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/notifications-selected.png{{css_version}}'><div class='new' style="display:none;"></div></div>
+                        <div id='menu-messages-desktop' class='menu-item menu-desktop-item'><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/messages-selected.png{{css_version}}'><div class='new' style="display:none;"></div></div>
+                    {{else}}
+                        <a href='/login' style='float:right;'><div id='menu-login-desktop' class='menu-item menu-desktop-item'>{{#with i18n}}{{login}}{{/with}}</div></a>
+                    {{/if}}
+                    <div id="btn-services" class="menu-item menu-desktop-item" style="float:right;" alt="{{#with i18n}}{{total_service}}{{/with}}" title="{{#with i18n}}{{total_service}}{{/with}}"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/services.png{{css_version}}'></div>
+                    <!--<div id="select-lang-desktop-wrapper" class="menu-desktop-item"><select class="select-lang">{{#with i18n}}{{{select_lang}}}{{/with}}</select></div>-->
+                </div>
+            </div>
+            <div class="desktop-only" style="width:100%;margin-top:15px;"></div>
+            <div class="mobile-only" style="width:100%;margin-top:49px;"></div>
+            <div id="written-wrapper">
+                <div class="article-title" id="hire-me-title">{{#with i18n}}{{hire_me}}{{/with}}</div>
+                <div class="single-article-wrapper">
+                    {{{hire_me}}}
+                    <div id="ground" style="display:none;">
+                        <form class="write-form">
+                            {{#with i18n}}
+                                <label><span class="write-label">{{title}}</span><input class="write-title" type="text" placeholder=""></label>
+                                <label id="ground-editor-label" for="ground-editor"><span class="write-label">{{content}}</span>
+                                    <div class="write-content-wrapper">
+                                        <textarea id="ground-editor" class="write-content" placeholder=""></textarea>
+                                    </div>
+                                </label>
+                                <label><span class="write-label">{{tags}}</span><div class="write-label-description">E.g. #gleant#debate</div><input class="tags" type="text" placeholder=""></label>
+                                <div class="btn-career-wrapper"><!--
+                                --><input class="btn-career btn-initialization" type="button" value="{{init}}"><!--
+                                --><input class="btn-career write-cancel" type="button" value="{{cancel}}"><!--
+                                --><input class="btn-career write-submit" type="button" value="{{check}}"><!--
+                            --></div>
+                            {{/with}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="desktop-right2">
+                <div id="desktop-realtime-topic-hire-me">
+                    <div><div id="desktop-realtime-topic-hire-me-title" class="realtime-topic-hire-me-title">{{realtime_hire_me}}</div></div>
+                    <div id="desktop-realtime-topic-hire-me-none" class="realtime-topic-hire-me-none">{{#with i18n}}{{there_is_no_writing}}{{/with}}</div>
+                    <ul class="realtime-topic-hire-me-list"></ul>
+                </div>
+            </div>
+            <div id="mobile-realtime-topic-hire-me">
+                <div id="mobile-realtime-topic-hire-me-title" class="realtime-topic-hire-me-title">{{realtime_hire_me}}</div>
+                <div id="mobile-realtime-topic-hire-me-none" class="realtime-topic-hire-me-none">{{#with i18n}}{{there_is_no_writing}}{{/with}}</div>
+                <ul class="realtime-topic-hire-me-list"></ul>
+            </div>
+            <div id="footer">
+                {{#with i18n}}
+                    <a href="/announcement"><div class="footer-item">{{announcement}}</div></a>
+                    <a href="/policy"><div class="footer-item">{{data_policy}}</div></a>
+                    <a href="/terms"><div class="footer-item">{{terms_of_service}}</div></a>
+                    <div id="copyright">{{copyright}}</div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+    <form id="upload-image-form" action="/insert/image" method="POST" enctype="multipart/form-data" target="upload-image-iframe">
+        <input id="upload-image" name="upload-image" type="file" accept="image/*">
+    </form>
+    <iframe id="upload-image-iframe" name="upload-image-iframe"></iframe>
+    <div id="image-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/photo.png{{css_version}}"><span>{{image_add}}</span></div>
+                            <div id="image-prompt-description" class="prompt-description"><span class="gallery-item-count">{{selected}} 0</span></div>
+                            <div id="image-description-device" class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div id='image-menu'><input id='image-menu-user-gallery' class="selected" type='button' value='{{select_on_album}}'><input id='image-menu-device-gallery' type='button' value='{{select_on_computer}}'></div>
+                            <div id="device-gallery-content">
+                                <form id="image-device-form">
+                                    <input id='btn-image-device-add' type='button' value='{{check}}'>
+                                </form>
+                            </div>
+                            <div class="user-gallery-none">{{there_is_no_image}}</div>
+                            <div id="device-gallery"></div>
+                            <div class="user-gallery-wrapper">
+                                <div class="user-gallery"></div>
+                                <div class="user-gallery-more btn-more"><img class='btn-more-down-12' src='{{aws_s3_url}}/icons/more-down.png{{css_version}}'></div>
+                            </div>
+                            <form id="user-gallery-form">
+                                <div class='btn-career-wrapper'>
+                                    <input id='btn-cancel-user-gallery-item' class='btn-career' type='button' value='{{cancel}}'>
+                                    <input id='btn-add-user-gallery-item' class='btn-career' type='submit' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="youtube-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/youtube.png{{css_version}}"><span>{{youtube_add}}</span></div>
+                            <div class="prompt-description">{{please_enter_youtube_url}}</div>
+                        </div>
+                        <div class="prompt-main">
+                            <form id="youtube-form">
+                                <input id="youtube-link" type="text" placeholder="https://www.youtube.com/watch?v=YWgXwYGZSx4">
+                                <div class='btn-career-wrapper'>
+                                    <input id='btn-video-cancel' class='btn-career' type='button' value='{{cancel}}'>
+                                    <input id='btn-video-add' class='btn-career' type='submit' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="link-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/link.png{{css_version}}"><span>{{link_add}}</span></div>
+                            <div class="prompt-description">{{please_enter_url}}</div>
+                        </div>
+                        <div class="prompt-main">
+                            <form id="link-form">
+                                <input id="link" type="text" placeholder="">
+                                <div class='btn-career-wrapper'>
+                                    <input id='btn-link-cancel' class='btn-career' type='button' value='{{cancel}}'>
+                                    <input id='btn-link-add' class='btn-career' type='submit' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="vote-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/vote.png{{css_version}}"><span>{{vote}}</span></div>
+                        </div>
+                        <div class="prompt-main">
+                            <form id="vote-form">
+                                <label for="vote-question">{{question}}</label>
+                                <div id="vote-question-wrapper"><textarea id="vote-question" placeholder=""></textarea></div>
+                                <div class="choice"><div class="write-label" style="vertical-align:middle;display:inline-block;">{{choices}}</div><div class="choice-add"><div><img src="{{aws_s3_url}}/icons/add.png{{css_version}}"></div></div></div>
+                                <div class="choices"></div>
+                                <div class="vote-secret">
+                                    <div class="toggle-vote-secret-checker"><img src="{{aws_s3_url}}/icons/checked-grey.png{{css_version}}"></div>
+                                    <div>{{anonymous_vote}}</div>
+                                </div>
+                                <div class="vote-deadline-datetime">
+                                    <div class="vote-deadline-datetime-top">
+                                        <div class="toggle-vote-deadline-datetime-checker"><img src="{{aws_s3_url}}/icons/checked-grey.png{{css_version}}"></div>
+                                        <div>{{deadline_setting}}</div>
+                                    </div>
+                                    <div class="vote-deadline-datetime-content">
+                                        <div class="vote-clock clock"></div>
+                                        <div class="vote-deadline-fixed-datetime"></div>
+                                        <select class="vote-deadline-year"></select><select class="vote-deadline-month"></select><select class="vote-deadline-day-of-month"></select><br>
+                                        <span class="vote-deadline-day-of-week"></span><select class="vote-deadline-hours"></select>:<select class="vote-deadline-minutes"></select>
+                                    </div>
+                                </div>
+                                <div class='btn-career-wrapper'>
+                                    <input id='btn-vote-cancel' class='btn-career' type='button' value='{{cancel}}'>
+                                    <input id='btn-vote-add' class='btn-career' type='submit' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="update-profile-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-top">
+                        <div class="prompt-title"></div>
+                        <div class="prompt-description"></div>
+                    </div>
+                    <div class="prompt-main">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="edit-detailed-career-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-top">
+                        <div class="prompt-title"></div>
+                        <div class="prompt-description"></div>
+                    </div>
+                    <div class="prompt-main"><ul></ul></div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="initialization-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title">{{init}}</div>
+                            <div class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main">
+                            <form id="initialization-form">
+                                <div class='btn-career-wrapper'>
+                                    <input class='btn-career btn-cancel' type='button' value='{{cancel}}'>
+                                    <input class='btn-career btn-ok' type='button' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="share-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/share2-selected.png{{css_version}}"><span>{{share}}</span></div>
+                            <div class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main">
+                            <a class="btn-kakaostory-share"><img id="kakaostory-logo" src="{{aws_s3_url}}/icons/kakaostory-logo.png{{css_version}}"><div id="kakaostory-title">Kakao Story</div></a>
+                            <a class="btn-kakaotalk-share" style="display:none;"><img id="kakaotalk-logo" src="{{aws_s3_url}}/icons/kakaotalk-logo.png{{css_version}}"><div id="kakaotalk-title">Kakao Talk</div></a>
+                            <a class="btn-twitter-share"><img id="twitter-logo" src="{{aws_s3_url}}/icons/twitter-logo.png{{css_version}}"><div id="twitter-title">Twitter</div></a>
+                            <a class="btn-facebook-share"><img id="facebook-logo" src="{{aws_s3_url}}/icons/facebook-logo.png{{css_version}}"><div id="facebook-title">Facebook</div></a>
+                            <div id="btn-copy-link">{{copy_url}}</div>
+                            <div><div id="text-copy-link"></div></div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="request-login-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-main" style="text-align:center;">
+                            {{please_login}}
+                            <div id="btn-go-to-login-wrapper"><a href="/login"><div id="btn-go-to-login">{{login}}</div></a></div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="apply-now-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div id="apply-now-wrapper"></div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="hire-me-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div id="hire-me-wrapper"></div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="agenda-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div id="agenda-wrapper"></div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="opinion-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div id="opinion-wrapper"></div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="translation-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div id="translation-wrapper"></div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="opinion-menu-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"></div>
+                        </div>
+                        <div class="prompt-main"></div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="translation-menu-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"></div>
+                        </div>
+                        <div class="prompt-main"></div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="announcement-menu-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"></div>
+                        </div>
+                        <div class="prompt-main"></div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    {{#if is_loginned}}
+        <div id="report-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        {{#with i18n}}
+                            <div class="prompt-top">
+                                <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/report-red.png{{css_version}}"><span>{{report}}</span></div>
+                                <div class="prompt-description">{{sorry_for_the_inconvenience}}</div>
+                            </div>
+                            <div class="prompt-main">
+                                <form id="report-form">
+                                    <div class="report-content-wrapper">
+                                        <textarea id="report-content" placeholder=""></textarea>
+                                    </div>
+                                    <div class="btn-career-wrapper">
+                                        <input id="report-submit" class="btn-career" type="button" value="{{report}}">
+                                    </div>
+                                </form>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="unicorn-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        <div class="prompt-top">
+                            <div class="prompt-title">{{#with i18n}}{{apply_now}}{{/with}}</div>
+                            <div class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div id="unicorn">
+                                <form class="write-form">
+                                    {{#with i18n}}
+                                        <label><span class="write-label">{{title}}</span><input class="write-title" type="text" placeholder=""></label>
+                                        <label for="unicorn-editor"><span class="write-label">{{content}}</span>
+                                            <div class="write-content-wrapper">
+                                                <textarea id="unicorn-editor" class="write-content" placeholder=""></textarea>
+                                            </div>
+                                        </label>
+                                        <label><span class="write-label">{{tags}}</span><div class="write-label-description">E.g. #gleant#debate</div><input class="tags" type="text" placeholder=""></label>
+                                        <div class="btn-career-wrapper"><!--
+                                    --><input class="btn-career btn-initialization" type="button" value="{{init}}"><!--
+                                    --><input class="btn-career write-cancel" type="button" value="{{cancel}}"><!--
+                                    --><input class="btn-career write-submit" type="button" value="{{check}}"><!--
+                                 --></div>
+                                    {{/with}}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="superior-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        <div class="prompt-top">
+                            <div class="prompt-title">{{#with i18n}}{{hire_me}}{{/with}}</div>
+                            <div class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div id="superior">
+                                <form class="write-form">
+                                    {{#with i18n}}
+                                        <label><span class="write-label">{{title}}</span><input class="write-title" type="text" placeholder=""></label>
+                                        <label for="superior-editor"><span class="write-label">{{content}}</span>
+                                            <div class="write-content-wrapper">
+                                                <textarea id="superior-editor" class="write-content" placeholder=""></textarea>
+                                            </div>
+                                        </label>
+                                        <label><span class="write-label">{{tags}}</span><div class="write-label-description">E.g. #gleant#debate</div><input class="tags" type="text" placeholder=""></label>
+                                        <div class="btn-career-wrapper"><!--
+                                    --><input class="btn-career btn-initialization" type="button" value="{{init}}"><!--
+                                    --><input class="btn-career write-cancel" type="button" value="{{cancel}}"><!--
+                                    --><input class="btn-career write-submit" type="button" value="{{check}}"><!--
+                                 --></div>
+                                    {{/with}}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="space-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        <div class="prompt-top">
+                            <div class="prompt-title">{{#with i18n}}{{agenda_edit}}{{/with}}</div>
+                            <div class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div id="space">
+                                <div class="write-top">
+                                    {{#with user}}
+                                        <div class="write-top-description">{{lower_profile_will_be_displayed}}</div>
+                                        <div class="user-profile">
+                                            <div class="user-profile-left">
+                                                <img src="{{img}}" alt="{{name}}" title="{{name}}">
+                                            </div>
+                                            <div class="user-profile-right">
+                                                <div>
+                                                    <span class="user-name">{{name}}</span>
+                                                </div>
+                                                <div class="user-info showing-profile">{{profile_for_show}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-career-wrapper">
+                                            <input class="btn-career change-show-career" type="button" value="{{edit}}">
+                                        </div>
+                                    {{/with}}
+                                </div>
+                                <form class="write-form">
+                                    {{#with i18n}}
+                                        <!--<div class="written-language-wrapper">
+                                            <label style="display:inline-block;"><span class="write-label">{{language}}</span><select class="written-language"></select></label>
+                                        </div>-->
+                                        <div class="main-tag-wrapper">
+                                            <label style="display:inline-block;"><span class="write-label">{{category}}</span><select class="main-tag"></select></label>
+                                        </div>
+                                        <label><span class="write-label">{{title}}</span><input class="write-title" type="text" placeholder=""></label>
+                                        <label for="space-editor"><span class="write-label">{{content}}</span>
+                                            <div class="write-content-wrapper">
+                                                <textarea id="space-editor" class="write-content" placeholder=""></textarea>
+                                            </div>
+                                        </label>
+                                        <label><span class="write-label">{{tags}}</span><div class="write-label-description">E.g. #gleant#debate</div><input class="tags" type="text" placeholder=""></label>
+                                        <div class="btn-career-wrapper"><!--
+                                    --><input class="btn-career btn-initialization" type="button" value="{{init}}"><!--
+                                    --><input class="btn-career write-cancel" type="button" value="{{cancel}}"><!--
+                                    --><input class="btn-career write-submit" type="button" value="{{check}}"><!--
+                                 --></div>
+                                    {{/with}}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="mars-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/write-translation-selected.png{{css_version}}"><span>{{#with i18n}}{{translation_edit}}{{/with}}</span></div>
+                            <div class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="remove-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        {{#with i18n}}
+                            <div class="prompt-main" style="text-align:center;">
+                                {{cannot_be_recovered_if_you_delete_it}}<br>{{do_you_want_to_delete_it}}
+                                <div id="remove-prompt-btns-wrapper">
+                                    <input id="btn-remove-cancel" class="btn-career" type="button" value="{{cancel}}">
+                                    <input id="btn-remove-ok" class="btn-career" type="button" value="{{check}}">
+                                </div>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="write-message-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        {{#with i18n}}
+                            <div class="prompt-top">
+                                <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/messages-selected.png{{css_version}}"><span>{{send_message}}</span></div>
+                            </div>
+                            <div class="prompt-main">
+                                <div class="write-message-top">
+                                    <span class="write-message-label">To.</span><img class="write-message-user-img" src="" alt="" title=""><span class="write-message-user-name"></span><span class="write-message-user-blog-id"></span>
+                                </div>
+                                <form id="write-message-form">
+                                    <div class="write-message-content-wrapper">
+                                        <textarea id="write-message-content"></textarea>
+                                    </div>
+                                    <div class="btn-career-wrapper">
+                                        <input id="write-message-submit" class="btn-career" type="button" value="{{check}}">
+                                    </div>
+                                </form>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="message-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        {{#with i18n}}
+                            <div class="prompt-top">
+                                <div class="prompt-title"><a href="/i/messages"><span class="check-all">{{view_all}}<img src="{{aws_s3_url}}/icons/more-right.png{{css_version}}"></span></a><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/messages-selected.png{{css_version}}"><span>{{messages}}</span></div>
+                            </div>
+                            <div class="prompt-main">
+                                <div class="message-menu"><input class="message-menu-received selected" type='button' value='{{received_messages}}'><input class="message-menu-sent" type='button' value='{{sent_messages}}'></div>
+                                <div class="message-list"></div>
+                                <div class="message-more btn-more"><img class="btn-more-down-14" src="{{aws_s3_url}}/icons/more-down.png{{css_version}}"></div>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="invitation-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        {{#with i18n}}
+                            <div class="prompt-top">
+                                <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/invitations.png{{css_version}}"><span>{{invite}}</span></div>
+                            </div>
+                            <div class="prompt-main">
+                                <div class="invitation-menu"><input class="invitation-menu-friends2 selected" type='button' value='{{friends}}'><input class="invitation-menu-search2" type='button' value='{{search}}'></div>
+                                <form class="invitation-search-wrapper"><div class="invitation-search-left"><input class="invitation-search" type="text"></div><div class="invitation-search-right"><input class="invitation-search-submit" type="button" style="background-image:url('{{aws_s3_url}}/icons/search-grey.png')"></div></form>
+                                <div class="invitation-list"></div>
+                                <div class='no-result'><span>{{there_is_no_user}}</span></div>
+                                <div class="invitation-more btn-more"><img class="btn-more-down-14" src="{{aws_s3_url}}/icons/more-down.png{{css_version}}"></div>
+                            </div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+        <div id="notification-prompt" class="prompt">
+            <div class="prompt-left">
+                <div>
+                    <div>
+                        <div class="prompt-top">
+                            {{#with i18n}}
+                                <div class="prompt-title"><a href="/i/notifications"><span class="check-all">{{view_all}}<img src="{{aws_s3_url}}/icons/more-right.png{{css_version}}"></span></a><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/notifications-selected.png{{css_version}}"><span>{{notifications}}</span></div>
+                            {{/with}}
+                        </div>
+                        <div class="prompt-main">
+                            <div class="notification-list"></div>
+                            {{#with i18n}}
+                                <div class="notification-more btn-more"><img class="btn-more-down-14" src="{{aws_s3_url}}/icons/more-down.png{{css_version}}"></div>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+        </div>
+    {{/if}}
+    <div id="overlay"></div>
+    <div id="overlay2"></div>
+    <div id="overlay3"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/kakao.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/clipboard.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_en.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ja.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ko.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_zh-Hans.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/moon.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/mars.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/star.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/list_methods.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/list.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/main/single_hire_me.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/simple-profile.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/search_main_tags.js{{js_version}}"></script>
+<script type="text/javascript" src="/ckeditor/ckeditor.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/detailed-career.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/write_form_methods.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/write_form.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/specific_comments.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/language.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/fixed_information.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/oauth.js{{js_version}}"></script>
+</body>
+</html>

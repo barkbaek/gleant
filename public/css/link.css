@@ -1,0 +1,194 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100% !important;
+}
+
+body {
+    margin: 0;
+    padding:0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.text-overflow-ellipsis {
+    text-align:left;
+    white-space:nowrap;
+    overflow:hidden !important;
+    text-overflow:ellipsis;
+}
+
+.link-item {
+    position:relative;
+    width:100%;
+    clear:both;
+    margin:0 auto;
+    display:block;
+    min-height:72px;
+}
+
+.link-item a {
+    display:block;
+}
+
+.link-scraped-wrapper {
+    position:absolute;
+    background:#fafafa;
+    top:0;
+    left:0;
+    right:0;
+}
+
+.link-scraped {
+    position:relative;
+    line-height:34px;
+    outline: none !important;
+    font-size: 14px;
+    color: #000000;
+    border: 1px solid #ebebeb;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -webkit-appearance: none;
+    height:72px;
+}
+html:lang(ja) .link-scraped,
+html:lang(zh-Hans) .link-scraped {
+    font-size: 13px;
+}
+.link-scraped .scraped-top {
+    position:absolute;
+    white-space:initial;
+    top:5px;
+    left:5px;
+    right:5px;
+    bottom:19px;
+    text-align:left;
+    padding: 0 5px;
+    vertical-align:middle;
+    font-size:14px;
+    line-height:24px;
+}
+html:lang(ja) .link-scraped .scraped-top,
+html:lang(zh-Hans) .link-scraped .scraped-top {
+    font-size: 13px;
+}
+.link-scraped .scraped-left {
+    border:1px solid #ebebeb;
+    background:#ffffff;
+    position:absolute;
+    top:5px;
+    left:5px;
+    width: 48px;
+    height: 48px;
+    object-fit:cover;
+}
+.link-scraped .scraped-right {
+    position:absolute;
+    white-space:initial;
+    top:5px;
+    left:58px;
+    right:5px;
+    bottom:19px;
+    text-align:left;
+    padding: 0 5px;
+    vertical-align:middle;
+    font-size:14px;
+    line-height:24px;
+}
+html:lang(ja) .link-scraped .scraped-right,
+html:lang(zh-Hans) .link-scraped .scraped-right {
+    font-size: 13px;
+}
+.link-scraped .scraped-top .scraped-top-inner,
+.link-scraped .scraped-right .scraped-right-inner {
+    vertical-align:middle;
+    width:100%;
+    height:100%;
+    color:#676767;
+    word-wrap:break-word;
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap; /* current browsers */
+}
+.link-scraped .scraped-top .scraped-title,
+.link-scraped .scraped-right .scraped-title {
+    display:inline;
+    font-size:13px;
+    color:#f2b50f;
+}
+html:lang(ja) .link-scraped .scraped-top .scraped-title,
+html:lang(ja) .link-scraped .scraped-right .scraped-title,
+html:lang(zh-Hans) .link-scraped .scraped-top .scraped-title,
+html:lang(zh-Hans) .link-scraped .scraped-right .scraped-title {
+    font-size: 12px;
+}
+.link-scraped .scraped-right .scraped-description {
+    display:inline;
+    font-size:12px;
+    font-weight:normal;
+    margin-left:10px;
+
+}
+html:lang(ja) .link-scraped .scraped-right .scraped-description,
+html:lang(zh-Hans) .link-scraped .scraped-right .scraped-description {
+    font-size: 11px;
+}
+.link-scraped .scraped-top .scraped-site,
+.link-scraped .scraped-right .scraped-site {
+    display:inline;
+    font-size:12px;
+    color:#898989;
+    margin-left:10px;
+}
+html:lang(ja) .link-scraped .scraped-top .scraped-site,
+html:lang(ja) .link-scraped .scraped-right .scraped-site,
+html:lang(zh-Hans) .link-scraped .scraped-top .scraped-site,
+html:lang(zh-Hans) .link-scraped .scraped-right .scraped-site {
+    font-size: 11px;
+}
+@media (min-width: 500px) {
+    .link-scraped .scraped-left {
+        height:90px;
+        width:90px;
+    }
+
+    .link-scraped .scraped-right {
+        left:100px;
+    }
+
+    .link-scraped .scraped-top .scraped-title,
+    .link-scraped .scraped-right .scraped-title {
+        display:block;
+    }
+
+    .link-scraped .scraped-right .scraped-description {
+        display:block;
+        margin-left:0;
+    }
+
+    .link-scraped .scraped-top .scraped-site,
+    .link-scraped .scraped-right .scraped-site {
+        display:block;
+        margin-left:0;
+    }
+}
+.link-scraped .scraped-bottom {
+    position:absolute;
+    left:5px;
+    right:5px;
+    bottom:5px;
+    height:14px;
+    font-size:10px;
+    color:#787878;
+    line-height:14px;
+    text-align:right;
+}
+html:lang(ja) .link-scraped .scraped-bottom,
+html:lang(zh-Hans) .link-scraped .scraped-bottom {
+    font-size: 9px;
+}
+.format-checker-red {
+    color: #f90101;
+}
+.format-checker-green {
+    color: #00933b;
+}

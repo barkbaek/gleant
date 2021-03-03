@@ -1,0 +1,423 @@
+/*
+Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+
+html {
+	font-size: 14px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/*    overflow:scroll; */
+	/*    overflow-x: hidden; */
+}
+html:lang(ja),
+html:lang(zh-Hans) {
+	font-size: 13px;
+}
+::-webkit-scrollbar {
+	background: transparent;
+}
+/*::-webkit-scrollbar-thumb {*/
+	/*background: #121212;*/
+/*}*/
+
+::-webkit-input-placeholder {
+	font-size:12px;
+}
+html:lang(ja) ::-webkit-input-placeholder,
+html:lang(zh-Hans) ::-webkit-input-placeholder {
+	font-size: 11px;
+}
+body {
+	/* Font */
+	font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+	font-size: 12px;
+	/* Text color */
+	color: #333;
+	/* Remove the background color to make it transparent */
+	background-color: #fff;
+	margin: 10px;
+}
+html:lang(ja) body,
+html:lang(zh-Hans) body {
+	font-size: 11px;
+}
+.cke_editable {
+	font-size: 13px;
+	line-height: 1.6;
+
+	/* Fix for missing scrollbars with RTL texts. (#10488) */
+	word-wrap: break-word;
+}
+html:lang(ja) .cke_editable,
+html:lang(zh-Hans) .cke_editable {
+	font-size: 12px;
+}
+blockquote {
+	display:block;
+	font-size: 16px;
+	font-style: italic;
+	width:100%;
+	margin: 0;
+	padding:0;
+	text-align:center;
+	line-height: 1.45;
+	color: #787878;
+}
+html:lang(ja) blockquote,
+html:lang(zh-Hans) blockquote {
+	font-size: 15px;
+}
+blockquote p,
+blockquote div {
+	margin:0;
+	padding:0;
+	display:inline;
+}
+blockquote p:before,
+blockquote div:before,
+blockquote p:after,
+blockquote div:after{
+	font-family: Georgia, Times, "Times New Roman", serif;
+	display:inline;
+	font-size: 30px;
+	vertical-align: middle;
+	color: #787878;
+}
+html:lang(ja) blockquote p:before,
+html:lang(ja) blockquote div:before,
+html:lang(ja) blockquote p:after,
+html:lang(ja) blockquote div:after,
+html:lang(zh-Hans) blockquote p:before,
+html:lang(zh-Hans) blockquote div:before,
+html:lang(zh-Hans) blockquote p:after,
+html:lang(zh-Hans) blockquote div:after  {
+	font-size: 28px;
+}
+blockquote p:before,
+blockquote div:before {
+	padding-right:10px;
+	content: "\201C";
+}
+blockquote p:after,
+blockquote div:after {
+	padding-left:10px;
+	content: "\201D";
+}
+blockquote cite {
+	color: #999999;
+	font-size: 16px;
+	display: block;
+	margin-top: 5px;
+}
+html:lang(ja) blockquote cite,
+html:lang(zh-Hans) blockquote cite {
+	font-size: 15px;
+}
+blockquote cite:before {
+	content: "\2014 \2009";
+}
+blockquote
+{
+	/*font-style: italic;
+	font-family: Georgia, Times, "Times New Roman", serif;*/
+	/*padding: 2px 0;
+	border-style: solid;
+	border-color: #ccc;
+	border-width: 0;*/
+}
+
+.cke_contents_ltr blockquote
+{
+	/*padding-left: 20px;
+	padding-right: 8px;
+	border-left-width: 5px;*/
+}
+
+.cke_contents_rtl blockquote
+{
+	/*padding-left: 8px;
+	padding-right: 20px;
+	border-right-width: 5px;*/
+}
+
+a
+{
+	color: #0782C1;
+}
+
+ol,ul,dl
+{
+	/* IE7: reset rtl list margin. (#7334) */
+	*margin-right: 0px;
+	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
+	padding: 0 40px;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+hr
+{
+	border: 0px;
+	border-top: 1px solid #ccc;
+}
+
+img.right
+{
+	border: 1px solid #ccc;
+	float: right;
+	margin-left: 15px;
+	padding: 5px;
+}
+
+img.left
+{
+	border: 1px solid #ccc;
+	float: left;
+	margin-right: 15px;
+	padding: 5px;
+}
+
+pre
+{
+	white-space: pre-wrap; /* CSS 2.1 */
+	word-wrap: break-word; /* IE7 */
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+.marker
+{
+	background-color: Yellow;
+}
+
+span[lang]
+{
+	font-style: italic;
+}
+
+figure
+{
+	text-align: center;
+	border: solid 1px #ccc;
+	border-radius: 2px;
+	background: rgba(0,0,0,0.05);
+	padding: 10px;
+	margin: 10px 20px;
+	display: inline-block;
+}
+
+figure > figcaption
+{
+	text-align: center;
+	display: block; /* For IE8 */
+}
+
+a > img {
+	padding: 1px;
+	margin: 1px;
+	border: none;
+	outline: 1px solid #0782C1;
+}
+
+/* Widget Styles */
+.code-featured
+{
+	border: 5px solid red;
+}
+
+.math-featured
+{
+	padding: 20px;
+	box-shadow: 0 0 2px rgba(200, 0, 0, 1);
+	background-color: rgba(255, 0, 0, 0.05);
+	margin: 10px;
+}
+.image-clean {
+	border: 0;
+	background: none;
+	padding: 0;
+}
+.image-clean > figcaption {
+	font-size: .9em;
+	text-align: right;
+}
+.image-grayscale {
+	background-color: white;
+	color: #666;
+}
+.image-grayscale img, img.image-grayscale {
+	filter: grayscale(100%);
+}
+.embed-240p {
+	max-width: 426px;
+	max-height: 240px;
+	margin:0 auto;
+}
+.embed-360p {
+	max-width: 640px;
+	max-height: 360px;
+	margin:0 auto;
+}
+.embed-480p {
+	max-width: 854px;
+	max-height: 480px;
+	margin:0 auto;
+}
+.embed-720p {
+	max-width: 1280px;
+	max-height: 720px;
+	margin:0 auto;
+}
+.embed-1080p {
+	max-width: 1920px;
+	max-height: 1080px;
+	margin:0 auto;
+}
+.cke_editable img {
+	max-width:100%;
+	display:block;
+	margin:5px auto;
+	-webkit-appearance: none;
+}
+@media (min-width:510px) {
+	.cke_editable img {
+		max-width:500px;
+	}
+}
+iframe.youtube {
+	display:block;
+	width:100%;
+	min-width:200px;
+	height:200px;
+	margin:10px auto;
+}
+@media (min-width:290px) {
+	iframe.youtube {
+		width:280px;
+		height:200px;
+	}
+}
+@media (min-width:440px) {
+	iframe.youtube {
+		width:426px;
+		height:240px;
+	}
+}
+.filter-xpro2 {
+	-webkit-filter: contrast(1.3) brightness(0.8) sepia(0.3) saturate(1.5) hue-rotate(-20deg);
+	filter: contrast(1.3) brightness(0.8) sepia(0.3) saturate(1.5) hue-rotate(-20deg);
+}
+.filter-willow {
+	-webkit-filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02);
+	filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02);
+}
+.filter-walden {
+	-webkit-filter: sepia(0.35) contrast(0.9) brightness(1.1) hue-rotate(-10deg) saturate(1.5);
+	filter: sepia(0.35) contrast(0.9) brightness(1.1) hue-rotate(-10deg) saturate(1.5);
+}
+.filter-valencia {
+	-webkit-filter: sepia(0.15) saturate(1.5) contrast(0.9);
+	filter: sepia(0.15) saturate(1.5) contrast(0.9);
+}
+
+.filter-toaster {
+	-webkit-filter:sepia(0.4) saturate(2.5) hue-rotate(-30deg) contrast(0.67);
+	-filter:sepia(0.4) saturate(2.5) hue-rotate(-30deg) contrast(0.67);
+}
+
+.filter-sutro {
+	-webkit-filter: brightness(0.75) contrast(1.3) sepia(0.5) hue-rotate(-25deg);
+	filter: brightness(0.75) contrast(1.3) sepia(0.5) hue-rotate(-25deg);
+}
+
+.filter-sierra {
+	-webkit-filter: contrast(0.8) saturate(1.2) sepia(0.15);
+	filter: contrast(0.8) saturate(1.2) sepia(0.15);
+}
+
+.filter-rise {
+	-webkit-filter: saturate(1.4) sepia(0.25) hue-rotate(-15deg) contrast(0.8) brightness(1.1);
+	filter: saturate(1.4) sepia(0.25) hue-rotate(-15deg) contrast(0.8) brightness(1.1);
+}
+
+.filter-nashville {
+	-webkit-filter: sepia(0.4) saturate(1.5) contrast(0.9) brightness(1.1) hue-rotate(-15deg);
+	filter: sepia(0.4) saturate(1.5) contrast(0.9) brightness(1.1) hue-rotate(-15deg);
+}
+
+.filter-mayfair {
+	-webkit-filter: saturate(1.4) contrast(1.1);
+	filter: saturate(1.4) contrast(1.1);
+}
+
+.filter-lofi {
+	filter: contrast(1.4) brightness(0.9) sepia(0.05);
+	-webkit-filter: contrast(1.4) brightness(0.9) sepia(0.05);
+}
+
+.filter-kelvin {
+	filter: sepia(0.4) saturate(2.4) brightness(1.3) contrast(1);
+	-webkit-filter: sepia(0.4) saturate(2.4) brightness(1.3) contrast(1);
+}
+
+.filter-inkwell {
+	-webkit-filter: grayscale(1) brightness(1.2) contrast(1.05);
+	filter: grayscale(1) brightness(1.2) contrast(1.05);
+}
+
+.filter-hudson {
+	-webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+	filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+}
+
+.filter {
+	-webkit-filter: contrast(1.3) sepia(0.3) saturate(1.3) hue-rotate(-10deg) brightness(0.95);
+	filter: contrast(1.3) sepia(0.3) saturate(1.3) hue-rotate(-10deg) brightness(0.95);
+}
+
+.filter-earlybird {
+	-webkit-filter: sepia(0.4) saturate(1.6) contrast(1.1) brightness(0.9) hue-rotate(-10deg);
+	filter: sepia(0.4) saturate(1.6) contrast(1.1) brightness(0.9) hue-rotate(-10deg);
+}
+
+.filter-brannan {
+	-webkit-filter: sepia(0.5) contrast(1.4);
+	filter: sepia(0.5) contrast(1.4);
+}
+
+.filter-amaro {
+	-webkit-filter: hue-rotate(-10deg) contrast(0.9) brightness(1.1) saturate(1.5);
+	filter: hue-rotate(-10deg) contrast(0.9) brightness(1.1) saturate(1.5);
+}
+
+.filter-1977 {
+	-webkit-filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
+	filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
+}
+
+.iframe-link {
+	display:block;
+	border:0;
+	padding:0;
+	margin:0 auto;
+	width:100%;
+	height:80px;
+	max-width:500px;
+}
+
+.iframe-vote {
+	display:block;
+	border:0;
+	padding:1px;
+	margin:0 auto;
+	width:100%;
+	max-width:430px;
+}
+
+p {
+	margin:0;
+}

@@ -1,0 +1,86 @@
+#write-gleant-announcement-form {
+    margin-top:10px;
+    padding:10px;
+    border:2px dashed #ebebeb;
+    border-radius:10px;
+}
+#write-gleant-announcement-form label {
+    font-size:12px;
+    display:block;
+    margin-top:10px;
+    line-height:1.5em;
+}
+html:lang(ja) #write-gleant-announcement-form label,
+html:lang(zh-Hans) #write-gleant-announcement-form label {
+    font-size: 11px;
+}
+#write-gleant-announcement-form .write-label {
+    font-size:12px;
+    padding-left:5px;
+}
+html:lang(ja) #write-gleant-announcement-form .write-label,
+html:lang(zh-Hans) #write-gleant-announcement-form .write-label {
+    font-size: 11px;
+}
+#write-gleant-announcement-form #gleant-announcement-input {
+    border-left: 0;
+    border-right: 0;
+    font-weight:normal;
+}
+#write-gleant-announcement-form .write-content-wrapper {
+    width:100%;
+    border-top:1px solid #ebebeb;
+    border-bottom:1px solid #ebebeb;
+}
+#write-gleant-announcement-form select.written-language {
+    margin-left:10px;
+}
+#write-gleant-announcement-form .write-single-language-submit {
+    margin-top:10px;
+    margin-right:5px;
+}
+.output-title-wrapper {
+    margin-top:20px;
+    width:100%;
+}
+.output-title {
+    font-weight:bold;
+}
+.output-title,
+.output-document {
+    text-align:left;
+}
+.output-title,
+.btn-remove-output {
+    margin-left:10px;
+    display:inline-block;
+}
+
+.output-document {
+    width:100%;
+}
+
+#send-notification-wrapper {
+    margin-top:20px;
+    display:block;
+}
+
+#send-notification-wrapper img {
+    width:20px;
+}
+
+#send-notification-wrapper span {
+    margin-left:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+html:lang(ja) #send-notification-wrapper span,
+html:lang(zh-Hans) #send-notification-wrapper span {
+    font-size: 13px;
+}
+#send-notification-wrapper #send-notification {
+    margin-left:10px;
+}
+#write-gleant-announcement-submit {
+    margin:20px 0;
+}

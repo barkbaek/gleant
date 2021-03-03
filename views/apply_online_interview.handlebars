@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="google" content="notranslate">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta property="fb:app_id" content="{{fb_app_id}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <link rel="alternate" href="{{url}}" hreflang="{{doc_lang}}" />
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-lang="{{lang}}" data-check="{{is_loginned}}" data-css-version="{{css_version}}" data-js-version="{{js_version}}">
+<div class="body-inner">
+    <div id="online-interview-top">{{{online_interview_top}}}</div>
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;">
+        <div class="body-inner-main" style="text-align:center;">
+            <div id="written-wrapper" style="margin-top:49px;">
+                <div class="article-title" id="apply-online-interview-title"><img src="{{company_logo}}" style="height:30px;margin-right:5px;"><div style="margin-top:5px;font-size:16px;">{{title}}</div></div>
+                <div class="single-article-wrapper" style="position:relative;">{{{doc}}}</div>
+            </div>
+        </div>
+    </div>
+    <div id="reask-applying-online-interview" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-main" style="text-align:center;">
+                            {{do_you_want_to_complete_it}}
+                            <div style="width:100%;text-align:center;margin-top:10px;">
+                                <input class="btn-career cancel-apply-online-interview-submit" type="button" value="{{cancel}}">
+                                <input class="btn-career surely-apply-online-interview-submit" type="button" value="{{check}}">
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="overlay"></div>
+    <div id="overlay2"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/kakao.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/clipboard.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_en.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ja.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ko.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_zh-Hans.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/moon.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/mars.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/star.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/list_methods.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/list.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/main/apply_online_interview.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/simple-profile.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/search_main_tags.js{{js_version}}"></script>
+<script type="text/javascript" src="/ckeditor/ckeditor.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/detailed-career.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/write_form_methods.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/write_form.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/specific_comments.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/language.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/fixed_information.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/oauth.js{{js_version}}"></script>
+</body>
+</html>

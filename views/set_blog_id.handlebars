@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="google" content="notranslate">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta property="fb:app_id" content="{{fb_app_id}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-lang="{{lang}}">
+<div class="body-inner">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;">
+        <div class="body-inner-main">
+            <div style="position:relative;">
+                <div id="set-blog-id">
+                    {{#with i18n}}
+                    <div id="set-blog-id-title"><img id="set-blog-id-logo" class="animated swing" src="{{aws_s3_url}}/icons/logo.png{{css_version}}" alt="Gleant" title="Gleant"></div>
+                    <div id="register-complete-steps"><!--
+                     -->{{#if interest_tags_exist}}<!--
+                         --><div id="step-1-of-3" class="step"><div class="step-wrapper"><div class="step-level selected">1</div><div class="step-name selected">{{profile_setting}}</div></div></div><!--
+                         --><div id="step-2-of-3" class="step"><div class="step-wrapper"><div class="step-level">2</div><div class="step-name">{{interest_tags_setting}}</div></div></div><!--
+                         --><div id="step-3-of-3" class="step"><div class="step-wrapper"><div class="step-level">3</div><div class="step-name">{{blog_setting}}</div></div></div><!--
+                     -->{{else}}<!--
+                        --><div id="step-1-of-2" class="step"><div class="step-wrapper"><div class="step-level selected">1</div><div class="step-name selected">{{profile_setting}}</div></div></div><!--
+                        --><div id="step-2-of-2" class="step"><div class="step-wrapper"><div class="step-level">2</div><div class="step-name">{{blog_setting}}</div></div></div><!--
+                     -->{{/if}}<!--
+                 --></div>
+                    <form id="set-specific-info-form">
+                        <label for="name">{{real_name}}</label>
+                        <input id="name" type="text" placeholder="">
+                        <label for="birth-year">{{birth_date}}</label>
+                        <select id="birth-year"></select><select id="birth-month"></select><select id="birth-day"></select>
+                        <div class="label-title">{{gender}}</div>
+                        <div class="sex-wrapper">
+                            <div id="male" class="sex">{{male}}</div>
+                            <div id="female" class="sex">{{female}}</div>
+                        </div>
+                        <label for="blog-id">{{blog_id}}</label>
+                        <div>{{unable_to_reset_choose_carefully}}</div>
+                        <input id="blog-id" type="text" placeholder="gleant2017">
+                        <div style="font-size:10px;margin-top:5px;">
+                            <div id="blog-id-format-checker" class="format-checker-red">{{start_with_english_alphabet_lowercase_and_only_use_english_alphabet_lowercase_and_number}}</div>
+                            <div id="blog-id-length-checker" class="format-checker-red">{{length_6_to_14}}</div>
+                        </div>
+                        <!--<div class="label-title">{{main_language}}</div>
+                        <ul id="main-language-list" class="language-list">
+                            {{#each languages}}
+                                <li id="main-{{lang}}" data-lang="{{lang}}">{{i18n_text}}</li>
+                            {{/each}}
+                        </ul>
+                        <div class="label-title">{{available_languages}}</div>
+                        <ul id="available-language-list" class="language-list">
+                            {{#each languages}}
+                                <li id="available-{{lang}}" data-lang="{{lang}}">{{i18n_text}}</li>
+                            {{/each}}
+                        </ul>-->
+                        <div class="label-title">{{search_engine_profile_public_setting}}</div>
+                        <div class="search-engine-profile-public-setting-wrapper">
+                            <div id="logged-in-users" class="search-engine-profile-public-setting selected">{{logged_in_users}}</div>
+                            <div id="not-logged-in-users" class="search-engine-profile-public-setting">{{not_logged_in_users}}</div>
+                        </div>
+                        <input id="set-blog-id-submit" type="submit" value="{{check}}">
+                    </form>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_en.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ja.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ko.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_zh-Hans.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/main/set_blog_id.js{{js_version}}"></script>
+</body>

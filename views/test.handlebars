@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="google" content="notranslate">
+
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+</head>
+<body data-lang="{{lang}}" data-css-version="{{css_version}}">
+<div class="body-inner">
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;">
+            <div class="body-inner-main" style="text-align:center;">
+                <div class="wrapper2">
+                    <!-- 1. facebook 로그인 -->
+                    <form id="facebook-login" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Facebook Login</h1>
+                        <input id="btn-facebook-login" type="button" style="width:100%;" value="Facebook Login">
+                    </form>
+
+                    <!-- 1-2. facebook 공유 -->
+                    <form id="facebook-share" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Facebook Share</h1>
+                        <input id="btn-facebook-share" type="button" style="width:100%;" value="Facebook Share">
+                    </form>
+
+                    <form id="kakaotalk-login" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Kakaotalk Login</h1>
+                        <input id="btn-kakao-login" type="button" style="width:100%;" value="Kakao Login">
+                    </form>
+
+                    <form id="kakaotalk-share" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Kakaotalk Share</h1>
+                        <input id="btn-kakaotalk-share" type="button" style="width:100%;" value="Kakao Share">
+                    </form>
+
+                    <!-- 2-3. kakaostory 공유 -->
+                    <form id="kakaostory-share" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">KakaoStory Share</h1>
+                        <input id="btn-kakaostory-share" type="button" style="width:100%;" value="Kakao Story Share">
+                    </form>
+
+                    <!-- 2-4. twitter 공유 -->
+                    <form id="twitter-login" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Twitter Share</h1>
+                        <input id="btn-twitter-share" type="button" style="width:100%;" value="Twitter Share">
+                    </form>
+
+                    <!-- 3. request로 crawling -->
+                    <form id="crawl-site" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Crawl Site</h1>
+                        <input id="link-crawl-site" type="text" value="">
+                        <input id="btn-crawl-site" type="button" style="width:100%;" value="Crawl Site">
+                    </form>
+                    <div id="o-crawl-site"></div>
+
+                    <!-- 4. 이미지 프로세싱 -->
+                    <form id="resize-image" style="width:100%;margin-bottom:20px;padding:10px;" action="/insert/image" method="POST" enctype="multipart/form-data" target="o-resize-image">
+                        <h1 style="margin-bottom:0; text-align:left;">Resize Image</h1>
+                        <input id="btn-resize-image" name="btn-resize-image" type="file" accept="image/*" style="width:100%;" value="Resize Image">
+                    </form>
+                    <iframe id="o-resize-image" name="o-resize-image" style="width:100%;padding:10px;height:200px;border:1px solid #ebebeb;overflow-x:hidden;overflow-y:auto;"></iframe>
+
+
+                    <!-- 5. MongoDB -->
+                    <form id="connect-mongodb" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Connect MongoDB</h1>
+                        <input id="btn-connect-mongodb" type="button" style="width:100%;" value="Connect MongoDB">
+                    </form>
+                    <div id="o-connect-mongodb"></div>
+
+                    <!-- 6. ElasticSearch -->
+                    <form id="connect-elasticsearch" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Connect Elasticsearch</h1>
+                        <input id="btn-connect-elasticsearch" type="button" style="width:100%;" value="Connect ElasticSearch">
+                    </form>
+                    <div id="o-connect-elasticsearch"></div>
+
+                    <!-- 7. MariaDB -->
+                    <form id="connect-mariadb" style="width:100%;margin-bottom:20px;padding:10px;">
+                        <h1 style="margin-bottom:0; text-align:left;">Connect MariaDB</h1>
+                        <input id="btn-connect-mariadb" type="button" style="width:100%;" value="Connect MariaDB">
+                    </form>
+                    <div id="o-connect-mariadb"></div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/kakao.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/clipboard.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_en.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ja.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ko.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_zh-Hans.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+
+<script type="text/javascript" src="/js/main/test.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/oauth.js{{js_version}}"></script>
+
+</body>
+</html>

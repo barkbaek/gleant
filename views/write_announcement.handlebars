@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/admin.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="google" content="notranslate">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta property="fb:app_id" content="{{fb_app_id}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <link rel="alternate" href="{{url}}" hreflang="{{lang}}" />
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-lang="{{lang}}" data-check="{{is_loginned}}" data-css-version="{{css_version}}" data-js-version="{{js_version}}" data-action="{{query_action}}>
+<div class="body-inner">
+    <div id="mobile-menu">
+        <a href='/'><div class="menu-desktop-item home"><img src='{{aws_s3_url}}/icons/logo.png{{css_version}}'></div></a><a class="menu-desktop-main-title" href="/cms?type=news_tag&action=write&sort=all"><div class="menu-desktop-item home-title">CMS</div></a>
+        <img id="menu-btn-mobile" src="{{aws_s3_url}}/icons/menu.png{{css_version}}">
+    </div>
+    <div id="mobile-right-menu">
+        <div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div>
+        <!--<div class="select-lang-item"><select class="select-lang">{{#with i18n}}{{{select_lang}}}{{/with}}</select></div>-->
+        {{#if is_loginned}}
+            <div class="user-item">
+                <div class="user-profile">
+                    {{#with user}}
+                        <div class="user-profile-left"><img src="{{img}}"></div>
+                        <div class="user-profile-right"><div><span class="user-name">{{name}}</span></div><div class="blog-id">@{{blog_id}}</div></div>
+                    {{/with}}
+                </div>
+                <div class="user-profile-info"><div id="menu-messages-mobile" class="user-profile-info-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/messages-selected.png{{css_version}}'><div class='new' style="display:none;"></div><div class="user-profile-info-title">{{#with i18n}}{{messages}}{{/with}}</div></div><div id="menu-notifications-mobile" class="user-profile-info-item user-profile-info-right-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/notifications-selected.png{{css_version}}'><div class='new' style="display:none;"></div><div class="user-profile-info-title">{{#with i18n}}{{notifications}}{{/with}}</div></div><a href='{{profile_url}}'><div class="user-profile-info-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/blog-logo-black.png{{css_version}}'><div class="user-profile-info-title">{{#with i18n}}{{blog}}{{/with}}</div></div></a><div id='menu-logout-mobile' class="user-profile-info-item user-profile-info-right-item"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/logout.png{{css_version}}'><div class="user-profile-info-title">{{#with i18n}}{{logout}}{{/with}}</div></div></div>
+            </div>
+        {{else}}
+            <div class="login-item">
+                {{#with i18n}}
+                    <div class="login-item-description">{{please_login}}</div>
+                    <a href="/login"><div class="login-item-box"><img src="{{aws_s3_url}}/icons/logo.png{{css_version}}" alt="Gleant" title="Gleant"><span>{{login}}</span></div></a>
+                    <div class="login-item-bottom">
+                        <div class="forgot-password"><a href="/forgot-password"><span>{{forgot_password}}</span></a></div>
+                        <div class="register"><a href="/register"><span>{{register}}</span></a></div>
+                    </div>
+                {{/with}}
+            </div>
+        {{/if}}
+        <div class="services">{{#with i18n}}<div class="service-title"><span>{{total_service}}</span></div><a href="/news"><div class="service-item"><img src="{{aws_s3_url}}/icons/news-logo2.png{{css_version}}"><div>{{news}}</div></div></a><a href="/debate"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/debate_logo.png{{css_version}}"><div>{{debate}}</div></div></a><a href="/blog"><div class="service-item"><img src="{{aws_s3_url}}/icons/blog-logo.png{{css_version}}"><div>{{blog}}</div></div></a><a href="/"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/search-logo.png{{css_version}}"><div>{{search}}</div></div></a>{{/with}}</div>
+    </div>
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;">
+        <div class="body-inner-main" style="text-align:center;">
+            <div class="menu-space"></div>
+            <div id="menu">
+                <div id="menu-inner">
+                    <div id="service-list"><!--
+                            --><div class="services">{{#with i18n}}<div class="service-title"><span>{{total_service}}</span></div><a href="/news"><div class="service-item"><img src="{{aws_s3_url}}/icons/news-logo2.png{{css_version}}"><div>{{news}}</div></div></a><a href="/debate"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/debate_logo.png{{css_version}}"><div>{{debate}}</div></div></a><a href="/blog"><div class="service-item"><img src="{{aws_s3_url}}/icons/blog-logo.png{{css_version}}"><div>{{blog}}</div></div></a><a href="/"><div class="service-item service-right-item"><img src="{{aws_s3_url}}/icons/search-logo.png{{css_version}}"><div>{{search}}</div></div></a>{{/with}}</div><!--
+                        --></div>
+                    <a id="menu-desktop-home" href='/'><div class="menu-desktop-item home"><img src='{{aws_s3_url}}/icons/logo.png{{css_version}}'></div></a><a class="menu-desktop-main-title" href="/cms?type=news_tag&action=write&sort=all"><div class="menu-desktop-item home-title">CMS</div></a>
+                    {{#if is_loginned}}
+                        <div id='menu-user-desktop' class='menu-item menu-desktop-item' style="position:relative;">{{#with user}}<img class='emoticon-big-circle-img' src='{{img}}'><span>{{name}}</span>{{/with}}<!--
+                            --><div id="desktop-user-menu"><!--
+                                --><ul><!--
+                                    --><a href='{{profile_url}}'><li id='menu-profile-desktop' class='menu-item'><img class='emoticon-big-square-img' src="{{aws_s3_url}}/icons/blog-logo-black.png{{css_version}}"><span>{{#with i18n}}{{blog}}{{/with}}</span></li></a><!--
+                                    --><li id='menu-logout-desktop' class='menu-item'><img class='emoticon-big-square-img' src="{{aws_s3_url}}/icons/logout.png{{css_version}}"><span>{{#with i18n}}{{logout}}{{/with}}</span></li><!--
+                                --></ul><!--
+                            --></div><!--
+                        --></div>
+                        <div id='menu-notifications-desktop' class='menu-item menu-desktop-item'><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/notifications-selected.png{{css_version}}'><div class='new' style="display:none;"></div></div>
+                        <div id='menu-messages-desktop' class='menu-item menu-desktop-item'><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/messages-selected.png{{css_version}}'><div class='new' style="display:none;"></div></div>
+                    {{else}}
+                        <a href='/login' style='float:right;'><div id='menu-login-desktop' class='menu-item menu-desktop-item'>{{#with i18n}}{{login}}{{/with}}</div></a>
+                    {{/if}}
+                    {{#with i18n}}
+                        <div id="btn-services" class="menu-item menu-desktop-item" style="float:right;" alt="{{total_service}}" title="{{total_service}}"><img class='emoticon-big-square-img' src='{{aws_s3_url}}/icons/services.png{{css_version}}'></div>
+                    {{/with}}
+                    <!--<div id="select-lang-desktop-wrapper" class="menu-desktop-item"><select class="select-lang">{{#with i18n}}{{{select_lang}}}{{/with}}</select></div>-->
+                </div>
+            </div>
+            <div id="cms-menu">{{{cms_menu}}}</div>
+            <div id="cms-sub-menu">{{{cms_sub_menu}}}</div>
+            <div class="cms-wrapper">
+                <div class="single-article-wrapper" style="position:relative;">{{{form_top}}}</div>
+            </div>
+            <div style="border-bottom:1px solid #ebebeb;margin:10px 0;"></div>
+            <div class="cms-wrapper">
+                <div class="single-article-wrapper" style="position:relative;">{{{form_bottom}}}</div>
+            </div>
+        </div>
+    </div>
+    <form id="upload-image-form" action="/insert/image" method="POST" enctype="multipart/form-data" target="upload-image-iframe">
+        <input id="upload-image" name="upload-image" type="file" accept="image/*">
+    </form>
+    <iframe id="upload-image-iframe" name="upload-image-iframe"></iframe>
+    <div id="image-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/photo.png{{css_version}}"><span>{{image_add}}</span></div>
+                            <div id="image-prompt-description" class="prompt-description"><span class="gallery-item-count">{{selected}} 0</span></div>
+                            <div id="image-description-device" class="prompt-description"></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div id='image-menu'><input id='image-menu-user-gallery' class="selected" type='button' value='{{select_on_album}}'><input id='image-menu-device-gallery' type='button' value='{{select_on_computer}}'></div>
+                            <div id="device-gallery-content">
+                                <form id="image-device-form">
+                                    <input id='btn-image-device-add' type='button' value='{{check}}'>
+                                </form>
+                            </div>
+                            <div class="user-gallery-none">{{there_is_no_image}}</div>
+                            <div id="device-gallery"></div>
+                            <div class="user-gallery-wrapper">
+                                <div class="user-gallery"></div>
+                                <div class="user-gallery-more btn-more"><img class='btn-more-down-12' src='{{aws_s3_url}}/icons/more-down.png{{css_version}}'></div>
+                            </div>
+                            <form id="user-gallery-form">
+                                <div class='btn-career-wrapper'>
+                                    <input id='btn-cancel-user-gallery-item' class='btn-career' type='button' value='{{cancel}}'>
+                                    <input id='btn-add-user-gallery-item' class='btn-career' type='submit' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="youtube-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/youtube.png{{css_version}}"><span>{{youtube_add}}</span></div>
+                            <div class="prompt-description">{{please_enter_youtube_url}}</div>
+                        </div>
+                        <div class="prompt-main">
+                            <form id="youtube-form">
+                                <input id="youtube-link" type="text" placeholder="https://www.youtube.com/watch?v=YWgXwYGZSx4">
+                                <div class='btn-career-wrapper'>
+                                    <input id='btn-video-cancel' class='btn-career' type='button' value='{{cancel}}'>
+                                    <input id='btn-video-add' class='btn-career' type='submit' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="link-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/link.png{{css_version}}"><span>{{link_add}}</span></div>
+                            <div class="prompt-description">{{please_enter_url}}</div>
+                        </div>
+                        <div class="prompt-main">
+                            <form id="link-form">
+                                <input id="link" type="text" placeholder="">
+                                <div class='btn-career-wrapper'>
+                                    <input id='btn-link-cancel' class='btn-career' type='button' value='{{cancel}}'>
+                                    <input id='btn-link-add' class='btn-career' type='submit' value='{{check}}'>
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="report-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/report-red.png{{css_version}}"><span>{{report}}</span></div>
+                            <div class="prompt-description">{{sorry_for_the_inconvenience}}</div>
+                        </div>
+                        <div class="prompt-main">
+                            <form id="report-form">
+                                <div class="report-content-wrapper">
+                                    <textarea id="report-content" placeholder=""></textarea>
+                                </div>
+                                <div class="btn-career-wrapper">
+                                    <input id="report-submit" class="btn-career" type="button" value="{{report}}">
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="cms-remove-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-main" style="text-align:center;">
+                            {{cannot_be_recovered_if_you_delete_it}}<br>{{do_you_want_to_delete_it}}
+                            <div id="cms-remove-prompt-btns-wrapper">
+                                <input id="btn-cms-remove-cancel" class="btn-career" type="button" value="{{cancel}}">
+                                <input id="btn-cms-remove-ok" class="btn-career" type="button" value="{{check}}">
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="remove-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-main" style="text-align:center;">
+                            {{cannot_be_recovered_if_you_delete_it}}<br>{{do_you_want_to_delete_it}}
+                            <div id="remove-prompt-btns-wrapper">
+                                <input id="btn-remove-cancel" class="btn-career" type="button" value="{{cancel}}">
+                                <input id="btn-remove-ok" class="btn-career" type="button" value="{{check}}">
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="write-message-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/messages-selected.png{{css_version}}"><span>{{send_message}}</span></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div class="write-message-top">
+                                <span class="write-message-label">To.</span><img class="write-message-user-img" src="" alt="" title=""><span class="write-message-user-name"></span><span class="write-message-user-blog-id"></span>
+                            </div>
+                            <form id="write-message-form">
+                                <div class="write-message-content-wrapper">
+                                    <textarea id="write-message-content"></textarea>
+                                </div>
+                                <div class="btn-career-wrapper">
+                                    <input id="write-message-submit" class="btn-career" type="button" value="{{check}}">
+                                </div>
+                            </form>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="message-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><a href="/i/messages"><span class="check-all">{{view_all}}<img src="{{aws_s3_url}}/icons/more-right.png{{css_version}}"></span></a><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/messages-selected.png{{css_version}}"><span>{{messages}}</span></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div class="message-menu"><input class="message-menu-received selected" type='button' value='{{received_messages}}'><input class="message-menu-sent" type='button' value='{{sent_messages}}'></div>
+                            <div class="message-list"></div>
+                            <div class="message-more btn-more"><img class="btn-more-down-14" src="{{aws_s3_url}}/icons/more-down.png{{css_version}}"></div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="invitation-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    {{#with i18n}}
+                        <div class="prompt-top">
+                            <div class="prompt-title"><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/invitations.png{{css_version}}"><span>{{invite}}</span></div>
+                        </div>
+                        <div class="prompt-main">
+                            <div class="invitation-menu"><input class="invitation-menu-recommended-users1 selected" type='button' value='{{recommended_users}}'><input class="invitation-menu-friends1" type='button' value='{{friends}}'><input class="invitation-menu-search1" type='button' value='{{search}}'></div>
+                            <form class="invitation-search-wrapper"><div class="invitation-search-left"><input class="invitation-search" type="text"></div><div class="invitation-search-right"><input class="invitation-search-submit" type="button" style="background-image:url('{{aws_s3_url}}/icons/search-grey.png')"></div></form>
+                            <div class="invitation-list"></div>
+                            <div class='no-result'><span>{{there_is_no_user}}</span></div>
+                            <div class="invitation-more btn-more"><img class="btn-more-down-14" src="{{aws_s3_url}}/icons/more-down.png{{css_version}}"></div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="notification-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-top">
+                        {{#with i18n}}
+                            <div class="prompt-title"><a href="/i/notifications"><span class="check-all">{{view_all}}<img src="{{aws_s3_url}}/icons/more-right.png{{css_version}}"></span></a><img class="emoticon-big-img" src="{{aws_s3_url}}/icons/notifications-selected.png{{css_version}}"><span>{{notifications}}</span></div>
+                        {{/with}}
+                    </div>
+                    <div class="prompt-main">
+                        <div class="notification-list"></div>
+                        {{#with i18n}}
+                            <div class="notification-more btn-more"><img class="btn-more-down-14" src="{{aws_s3_url}}/icons/more-down.png{{css_version}}"></div>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right"><div class="close"><img src="{{aws_s3_url}}/icons/delete.png{{css_version}}"></div></div>
+    </div>
+    <div id="overlay"></div>
+    <div id="overlay2"></div>
+    <div id="overlay3"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/kakao.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/clipboard.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_en.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ja.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_ko.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n_zh-Hans.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/i18n.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/moon.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/mars.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/star.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/list_methods.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/list.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/main/write_announcement.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/cms.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/simple-profile.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/search_main_tags.js{{js_version}}"></script>
+<script type="text/javascript" src="/ckeditor/ckeditor.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/detailed-career.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/write_form_methods.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/write_form.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/specific_comments.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/language.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/fixed_information.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/oauth.js{{js_version}}"></script>
+</body>
+</html>
